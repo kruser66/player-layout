@@ -1,97 +1,97 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Пример подключения плеера</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="./static/font-awesome.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="./static/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./static/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./static/favicon-16x16.png">
-  <link rel="manifest" href="./static/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">  <style type="text/css">
-    .player {
-      width: 800px;
-      height: 600px;
-      border-style: none;
-      display: flex;
-      flex-direction: column;
-    }
-    .shadow {
-      box-shadow: 0 0 20px rgba(0,0,0,.8);
-    }
-    .btn-player {
-      border-style: none;
-      cursor: pointer;
-      background-color: transparent;
-      flex-grow: 0;
-    }
-    .btn-player-text{
-      color: white;
-      font-size: x-large;
-      text-align: left;
-      width: 24px;
-      padding: 5px
-    }
-    .video-container {
-      flex-grow: 1;
-    }
-    .btn-panel {
-      background-color: black;
-      padding: 10px;
-      flex-grow: 0;
-      display: flex;
-      flex-direction: row;
-    }
-    .time-player {
-      color: black;
-    }
-    .progress {
-      background-color: grey;
-    }
-    .progress-slider {
-      background-color: red;
-    }
-    .btn-player-empty {
-      flex-grow: 1;
-    }
-  </style>
-</head>
-<body>
-  <div id="player" class="player shadow">
+  <head>
+    <title>Пример подключения плеера</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./static/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/favicon-16x16.png">
+    <link rel="manifest" href="./static/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">  <style type="text/css">
+      .player {
+        width: 800px;
+        height: 600px;
+        border-style: none;
+        display: flex;
+        flex-direction: column;
+      }
+      .shadow {
+        box-shadow: 0 0 20px rgba(0,0,0,.8);
+      }
+      .btn-player {
+        border-style: none;
+        cursor: pointer;
+        background-color: transparent;
+        flex-grow: 0;
+      }
+      .btn-player-text{
+        color: white;
+        font-size: x-large;
+        text-align: left;
+        width: 24px;
+        padding: 5px
+      }
+      .video-container {
+        flex-grow: 1;
+      }
+      .btn-panel {
+        background-color: black;
+        padding: 10px;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+      }
+      .time-player {
+        color: black;
+      }
+      .progress {
+        background-color: grey;
+      }
+      .progress-slider {
+        background-color: red;
+      }
+      .btn-player-empty {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="player" class="player shadow">
 
-    <div class="js-video-container video-container"></div>
+      <div class="js-video-container video-container"></div>
 
-    <div class="btn-panel">
-      <button class="js-play-button btn-player">
-        <i class="fa fa-play btn-player-text" aria-hidden="true"></i>
-      </button>
-      <button class="js-pause-button btn-player" hidden>
-        <i class="fa fa-pause btn-player-text" aria-hidden="true"></i>
-      </button>
-      <button class="js-volume-button btn-player" >
-        <i class="fa fa-volume-up btn-player-text" aria-hidden="true"></i>
-      </button>
-      <button class="js-mute-button btn-player" hidden>
-        <i class="fa fa-volume-off btn-player-text" aria-hidden="true"></i>
-      </button>
-      <div class="btn-player-empty"></div>
-      <button class="js-fullscreen-button btn-player">
-         <i class="fa fa-expand btn-player-text" aria-hidden="true"></i>
-      </button>
+      <div class="btn-panel">
+        <button class="js-play-button btn-player">
+          <i class="fa fa-play btn-player-text" aria-hidden="true"></i>
+        </button>
+        <button class="js-pause-button btn-player" hidden>
+          <i class="fa fa-pause btn-player-text" aria-hidden="true"></i>
+        </button>
+        <button class="js-volume-button btn-player" >
+          <i class="fa fa-volume-up btn-player-text" aria-hidden="true"></i>
+        </button>
+        <button class="js-mute-button btn-player" hidden>
+          <i class="fa fa-volume-off btn-player-text" aria-hidden="true"></i>
+        </button>
+        <div class="btn-player-empty"></div>
+        <button class="js-fullscreen-button btn-player">
+           <i class="fa fa-expand btn-player-text" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
-  <script src="player.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+    <script src="player.js"></script>
 
-  <script type="text/javascript">
-    createPlayer({
-      elementId: 'player',
-      src: 'https://dvmn.org/media/filer_public/d0/16/d016d9b8-4180-4bb9-ad83-0241f61627b8/samsung_demo_-_alive_in_color.mp4',
-    });
-  </script>
+    <script type="text/javascript">
+      createPlayer({
+        elementId: 'player',
+        src: 'https://dvmn.org/media/filer_public/d0/16/d016d9b8-4180-4bb9-ad83-0241f61627b8/samsung_demo_-_alive_in_color.mp4',
+      });
+    </script>
 
-</body>
+  </body>
 </html>
