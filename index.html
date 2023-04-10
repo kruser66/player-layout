@@ -4,6 +4,7 @@
     <title>Пример подключения плеера</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./static/font-awesome.min.css">
+    <link rel="stylesheet" href="./static/player.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./static/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./static/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./static/favicon-16x16.png">
@@ -12,77 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">  
-    <style>
-      .player {
-        width: 800px;
-        height: 600px;
-        border-style: none;
-        display: flex;
-        flex-direction: column;
-      }
-      .shadow {
-        box-shadow: 0 0 3px 6px rgba(128,128,128,.6);
-      }
-      .btn-player {
-        border-style: none;
-        cursor: pointer;
-        background-color: transparent;
-        flex-grow: 0;
-        color: white;
-        font-size: 19px;
-        width: 37px;
-        padding: 0px;
-      }
-      .video-container {
-        flex-grow: 1;
-      }
-      .btn-panel {
-        background-color: black;
-        padding-bottom: 7px;
-        flex-grow: 0;
-        display: flex;
-        flex-direction: row;
-      }
-      .btn-player-empty {
-        flex-grow: 1;
-        padding: 5px;
-
-      }
-      .progress-bar {
-        display: flex;
-        flex-direction: row;
-      }
-      .progress-slider {
-        background-color: #f8104d;
-        height: 4px;
-        margin: 7px;
-        border-radius: 6px;
-      }
-      .player-time {
-        font-family: 'Roboto', sans-serif;
-        color: white;
-        padding-top: 5px;
-      }
-      .circle {
-        height: 8px;
-        width: 8px;
-        background-color: #f8104d;
-        border-radius: 50%;
-        display: inline-block;
-        box-shadow: 0 0 0 3px white;
-        margin-left: -9px;
-        opacity: 0;
-        transition-property: opacity;
-        transition-duration: .3s;
-        transition-timing-function: ease-out;
-      }
-      .btn-panel:hover .circle {
-        opacity: 1;
-        transition-property: opacity;
-        transition-duration: .3s;
-        transition-timing-function: ease-in;
-      }
-    </style>
   </head>
   <body>
     <div id="player" class="player shadow">
@@ -105,7 +35,7 @@
         <div class="player-time">
           <span class="js-current-time"></span>
         </div>
-        <div class="btn-player-empty">
+        <div class="btn-player-timeline">
           <div class="js-progress progress-bar">
             <div class="js-progress-slider progress-slider"></div>
             <div><span class="circle"></span></div>
