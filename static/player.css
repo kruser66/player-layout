@@ -31,12 +31,18 @@
     flex-grow: 0;
     display: flex;
     align-items: center;
+    height: 40px;
 }
 
-.btn-player-timeline {
+.player-timeline {
     flex-grow: 1;
-    padding: 5px;
+    display: flex;
+    align-items: center;
+}
 
+.player-progress-bar {
+    flex-grow: 1;
+    cursor: pointer;
 }
 
 .progress-bar {
@@ -46,7 +52,7 @@
 
 .progress-slider {
     background-color: #f8104d;
-    height: 4px;
+    height: 5px;
     margin: 7px;
     border-radius: 6px;
 }
@@ -54,7 +60,6 @@
 .player-time {
     font-family: 'Roboto', sans-serif;
     color: white;
-    padding-top: 5px;
 }
 
 .circle {
